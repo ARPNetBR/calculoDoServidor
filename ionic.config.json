@@ -1,0 +1,7 @@
+{
+  "name": "calculoDoServidor",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
