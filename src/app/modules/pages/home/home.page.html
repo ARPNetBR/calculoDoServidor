@@ -1,0 +1,286 @@
+<ion-header>
+  <nav  [ngClass]="{'ion-header-no-scroll': !isScrolled,
+            'ion-header-scroll': isScrolled}">
+    <ion-row style="margin-left: 1em">
+      <ion-col size="12" sizeLg="6" class="col-no-scroll" [ngClass]="{'col-scroll': isScrolled}">
+        <ion-buttons class="hide-min-xxl">        
+          <ion-menu-button color="primary"></ion-menu-button>
+        </ion-buttons>
+        <div class="logo" >
+          <img src="../../../../assets/icon/favicon.png" width="40"  alt="Logo">      
+        </div>
+
+        <span [ngClass]="{'color-no-scroll': !isScrolled,'color-scrolled': isScrolled}"
+          style="cursor: pointer;float: left;margin-left:15px"
+          (click)="onScrollTo('home')">Calculo do Servidor</span>
+      </ion-col>
+
+      <ion-col size="6" class="hide-xs col-no-scroll col-menu hide-max-xxl" 
+          [ngClass]="{'col-scroll': isScrolled}">
+
+        <div class="menu" [ngClass]="{'color-no-scroll': !isScrolled,'color-scrolled': isScrolled}">
+          <a [ngClass]="{'color-no-scroll': !isScrolled,'color-scrolled': isScrolled}"
+            href="javascript:void(0)" (click)="onScrollTo('prices')" >Planos</a>
+            | <a [ngClass]="{'color-no-scroll': !isScrolled,'color-scrolled': isScrolled}"
+            href="javascript:void(0)" (click)="onScrollTo('features')" >Funcionalidades</a>
+            | <a [ngClass]="{'color-no-scroll': !isScrolled,'color-scrolled': isScrolled}" 
+          href="javascript:void(0)" (click)="onScrollTo('social-media')">Siga-nos</a>
+          | <a [ngClass]="{'color-no-scroll': !isScrolled,'color-scrolled': isScrolled}" 
+            href="javascript:void(0)" (click)="onScrollTo('contact')">Contato</a>
+            | <a [ngClass]="{'color-no-scroll': !isScrolled,'color-scrolled': isScrolled}" 
+            href="javascript:void(0)" (click)="onPopupRequest('login')">
+              <ion-icon name="person" aria-hidden="true" 
+              [ngClass]="{'color-no-scroll': !isScrolled,'color-scrolled': isScrolled}"></ion-icon> Entre</a>
+        </div>
+      </ion-col>
+    </ion-row>
+  </nav> 
+</ion-header>
+<ion-content 
+  [fullscreen]="true" 
+  [scrollEvents]="true" 
+  (ionScroll)="onScroll($any($event))"
+  id="home">
+
+  <section id="main">
+    <div class="container ">
+      <ion-grid class="h100">
+        <ion-row class="h100">
+          <ion-col class="text" size="12" size-lg="6">
+              Bem-vindo ao nosso app de simulação de regras de aposentadoria para servidores. 
+              Ferramenta poderosa para entender e planejar a aposentadoria. 
+              Calculadora intuitiva considera diversos fatores como tempo de contribuição, 
+              idade e regime previdenciário. Visualização da data estimada de aposentadoria e valor do benefício esperado. 
+              Possibilidade de simular diferentes cenários. Compromisso em manter os dados atualizados 
+              conforme as mudanças legislativas. Aposentadoria planejada com confiança e segurança. 
+              Esse sistema é o resultado de anos de dedicação para transformar sua experiência com o RPPS.         
+          </ion-col>
+          <ion-col size="12" size-lg="6"  class="dAngelo ">
+            <i class="img-label">Prof. Dener Angelo</i>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>   
+  </section>
+
+  <section id="features" class="pt-1">
+    <h2 class="text-center h--features">Funcionalidades</h2>
+    <div class="features--container">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="feature-center" size="12" size-lg="4">
+            <div class="feature--img">
+              <ion-icon name="calculator"></ion-icon>              
+            </div>
+            <div class="feature-text">
+              <h2>nome da funcionalidade</h2>
+              <p>balbval balbal balbal balba blba </p>
+              <p>balbval balbal balbal balba blba </p>
+              <p>balbval balbal balbal balba blba </p>
+            </div>
+          </ion-col>
+
+          <ion-col class="feature-center" size="12" size-lg="4">
+            <div class="feature--img">
+              <ion-icon name="calculator"></ion-icon>              
+            </div>
+            <div class="feature-text">
+              <h2>nome da funcionalidade</h2>
+              <p>balbval balbal balbal balba blba </p>
+              <p>balbval balbal balbal balba blba </p>
+              <p>balbval balbal balbal balba blba </p>
+            </div>
+          </ion-col>
+
+          <ion-col class="feature-center" size="12" size-lg="4">
+            <div class="feature--img">
+              <ion-icon name="calculator"></ion-icon>              
+            </div>
+            <div class="feature-text">
+              <h2>nome da funcionalidade</h2>
+              <p>balbval balbal balbal balba blba </p>
+              <p>balbval balbal balbal balba blba </p>
+              <p>balbval balbal balbal balba blba </p>
+            </div>
+          </ion-col>
+          
+        </ion-row>        
+      </ion-grid>      
+    </div>
+  </section>
+
+  <section id="social-media" class="ion-text-center pt-1">
+    <h2 class="text-center h--youtube">Siga-nos no you tube</h2>
+            <iframe width="{{ youtubeWidth }}" height="{{ youtubeHeight }}" style="margin-top: 1.5em;"
+                src="https://www.youtube.com/embed/94wQxtv_sAc"
+                  frameborder="0" allowfullscreen>
+            </iframe>
+  </section>
+
+  <section id="prices" class="pt-1">
+    <h2 class="text-center h--planos">Planos</h2>
+    <ion-grid style="margin: 1em 0;">
+      <ion-row>
+        <ion-col size="12" size-md="6"  size-lg="3" style="padding: 0 1em;">
+          <ion-card>
+            <ion-card-content class="ion-text-center">
+              <ion-list lines="none" class="ion-no-padding list--planos">
+                <ion-item  class="pricing-title no--bg ">
+                  <ion-label>Assistente</ion-label>
+                </ion-item>
+                <ion-item  class="price no--bg ">
+                  <ion-label>R$ 0,00<sup>/ mes</sup></ion-label>
+                </ion-item>
+              </ion-list>
+              <ion-list  class=" list--planos--item">
+                <ion-item>
+                  <ion-label>The Legend of Zelda</ion-label>
+                </ion-item>
+                <ion-item class="oddx">
+                  <ion-label >Pac-Man</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label >Super Mario World</ion-label>
+                </ion-item>
+                <ion-item class="oddx">
+                  <ion-label >Pac-Man</ion-label>
+                </ion-item>
+              </ion-list>
+              <ion-button
+                size="large"
+                color="success">Contratar</ion-button>
+
+            </ion-card-content>
+            <br />
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="12" size-md="6"  size-lg="3" style="padding: 0 1em;">
+          <ion-card>
+            <ion-card-content class="ion-text-center">
+              <ion-list lines="none" class="ion-no-padding list--planos">
+                <ion-item  class="pricing-title no--bg ">
+                  <ion-label>Júnior</ion-label>
+                </ion-item>
+                <ion-item  class="price no--bg ">
+                  <ion-label>R$ 59,99<sup>/ mes</sup></ion-label>
+                </ion-item>
+              </ion-list>
+              <ion-list  class=" list--planos--item">
+                <ion-item>
+                  <ion-label>The Legend of Zelda</ion-label>
+                </ion-item>
+                <ion-item class="oddx">
+                  <ion-label >Pac-Man</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label >Super Mario World</ion-label>
+                </ion-item>
+                <ion-item class="oddx">
+                  <ion-label >Pac-Man</ion-label>
+                </ion-item>
+              </ion-list>
+              <ion-button
+              size="large"
+              color="success"
+                >Contratar</ion-button>
+            </ion-card-content>
+            <br />
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="12" size-md="6"  size-lg="3" style="padding: 0 1em;">
+          <ion-card>
+            <ion-card-content class="ion-text-center">
+              <ion-list lines="none" class="ion-no-padding list--planos">
+                <ion-item  class="pricing-title no--bg ">
+                  <ion-label>Pleno</ion-label>
+                </ion-item>
+                <ion-item  class="price no--bg ">
+                  <ion-label>R$ 99,99<sup>/ mes</sup></ion-label>
+                </ion-item>
+              </ion-list>
+              <ion-list  class=" list--planos--item">
+                <ion-item>
+                  <ion-label>The Legend of Zelda</ion-label>
+                </ion-item>
+                <ion-item class="oddx">
+                  <ion-label >Pac-Man</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label >Super Mario World</ion-label>
+                </ion-item>
+                <ion-item class="oddx">
+                  <ion-label >Pac-Man</ion-label>
+                </ion-item>
+              </ion-list>
+              <ion-button
+              size="large"
+              color="success"
+                >Contratar</ion-button>
+            </ion-card-content>
+            <br />
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="12" size-md="6"  size-lg="3" style="padding: 0 1em;">
+          <ion-card>
+            <ion-card-content class="ion-text-center">
+              <ion-list lines="none" class="ion-no-padding list--planos">
+                <ion-item  class="pricing-title no--bg ">
+                  <ion-label>Senior</ion-label>
+                </ion-item>
+                <ion-item  class="price no--bg ">
+                  <ion-label>R$ 149,99<sup>/ mes</sup></ion-label>
+                </ion-item>
+              </ion-list>
+              <ion-list  class=" list--planos--item">
+                <ion-item>
+                  <ion-label>The Legend of Zelda</ion-label>
+                </ion-item>
+                <ion-item class="oddx">
+                  <ion-label >Pac-Man</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label >Super Mario World</ion-label>
+                </ion-item>
+                <ion-item class="oddx">
+                  <ion-label >Pac-Man</ion-label>
+                </ion-item>
+              </ion-list>
+              <ion-button
+                size="large"
+                color="success"
+                >Contratar</ion-button>
+            </ion-card-content>
+            <br />
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>   
+  </section>
+
+  <section id="contact" class="pt-1">
+    <h2 class="text-center h--contato">Contato</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name">
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email">
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" placeholder="Enter your message"></textarea>
+      <ion-button expand="block" color="success">Enviar</ion-button>
+    </form>
+  </section>
+  <ion-footer>
+
+  </ion-footer>
+  
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" [ngClass]="{'ion-hide': !isScrolled}">
+    <ion-fab-button class="scroll--top" size="small" (click)="onScrollToTop($event)" >
+      <ion-icon name="chevron-up"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

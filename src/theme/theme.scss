@@ -1,0 +1,50 @@
+.borda{border: 2px solid green}
+.custom-toast-position {
+    bottom: 50px; 
+    left: 50%;
+    transform: translateX(-50%)
+  }
+.pt-1{padding-top: 1em}  
+.pb-1{padding-bottom: 1em}  
+.d-block{visibility: visible !important}
+.d-none{display: none !important}
+ 
+ion-modal.my-login-class::part(content) {    
+  --height: 80%;
+  position: absolute; 
+  top: 10%;
+  --width: 80%;
+  border-radius: 8px;
+  display: block;
+}
+
+.col-odd{background-color: var(--col-background) !important}
+.lh-2x{line-height: 2em !important}
+.line-height-2x{line-height: 2em !important}
+.fa-8x {font-size: 8em}
+.fa-6x {font-size: 6em}
+.font-2x{font-size: 1.4em}
+.border-bottom{border-bottom: 1px solid var(--ion-border-color)}
+.margin-bottom{margin-bottom: 1em}
+.top-10{margin-top: 10px !important}
+.bold{font-weight: bold}
+.clear-text-transform {text-transform: none !important}
+ion-button{text-transform: none !important}
+
+ion-modal.full-width-modal::part(content) {    
+  --height: 100%;
+  position: absolute; 
+  top: 0%;
+  --width: 100%}
+
+
+  @media (max-width: 576px) { 
+ 
+    ion-modal.my-login-class::part(content) {    
+      --height: 100%;
+      position: absolute; 
+      top: 0;
+      --width: 100%;
+      display: block;
+    }
+  }

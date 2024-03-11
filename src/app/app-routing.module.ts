@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [
+const routes: Routes = [ 
+  {
+    path: 'landing',
+    loadChildren: () => import('./modules/pages/landing/landing.module').then( m => m.LandingPageModule)
+  },
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./modules/pages/home/home.module').then( m => m.HomePageModule)
   }
 ];
 @NgModule({

@@ -1,0 +1,66 @@
+<!-- <ion-header translucent="true" style="border: 1px solid red;">
+    <ion-buttons slot="end">
+     
+    </ion-buttons>
+</ion-header> -->
+<ion-content>
+  <ion-button  (click)="modalDismiss()" fill="clear" class="close-btn">
+    <ion-icon name="close-outline"></ion-icon>
+  </ion-button>
+  <ion-grid class="full-height-grid">
+    <ion-row class="full-height-row">
+      <ion-col size="6" style="padding: 1em;" class="background-img hide-xs">
+      </ion-col>
+
+      <ion-col size="12" sizeLg="6" style="padding: 1em" class="center--form">        
+        <form [formGroup]="formData" (ngSubmit)="formSubmit(formData.value)">
+          <h2 class="ion-text-center login-title">Área Restrita</h2>
+          <ion-item lines="full">
+            <ion-label position="floating">Email:</ion-label>
+            <ion-input type="text" formControlName="email" required></ion-input>
+          </ion-item>
+      
+          <ng-container *ngFor="let error of errorMessage.email">
+            <div style="color: red; text-align: center;margin-top: .5em;"
+            *ngIf="formData.get('email').hasError(error.type) && (formData.get('email').dirty || formData.get('email').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+      
+          <ion-item lines="full">
+            <ion-label position="floating">Senha:</ion-label>
+            <ion-input type="password" formControlName="password"  required></ion-input>
+          </ion-item>
+      
+          <ng-container *ngFor="let error of errorMessage.password">
+            <div style="color: red; text-align: center;margin-top: .5em;"
+            *ngIf="formData.get('password').hasError(error.type) && (formData.get('password').dirty || formData.get('password').touched)">
+              {{ error.message }}
+            </div>
+        </ng-container>
+      
+        <ion-row>
+          <ion-col ion-text-center>
+            <ion-label ion-text-center color="danger">{{errorMsg}}</ion-label>
+          </ion-col>
+        </ion-row>
+          <ion-row style="margin-top: 1em;">
+            <ion-col>
+              <ion-button type="submit" color="success" expand="block" [disabled]="!formData.valid">Entrar</ion-button>
+      
+              <!-- <a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a> -->
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <p class="ion-text-center">Esqueceu a senha?
+                <a style="cursor: pointer;" (click)="goTo('forgot')" > Clique aqui</a></p>
+              <p class="ion-text-center">Ainda não tem uma conta? 
+                <a style="cursor: pointer;" (click)="goTo('register')">Criar Conta</a></p>
+            </ion-col>
+          </ion-row>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

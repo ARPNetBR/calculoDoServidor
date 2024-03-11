@@ -1,0 +1,71 @@
+@import url('navbar.scss');
+@import url('prices.scss');
+*{color:  #727272}
+.header{color: #727272;min-height: calc(100vh - 85px) }
+.header-grid{height: 100%}
+.header-row{height: 100%} 
+.header-col{display: flex;flex-direction: column;align-items: center;justify-content: center}
+.text-container{padding:0 20px}
+.text-container p{font-size: 1.3rem;text-align: justify;line-height: 1.6em}
+.text-container i{font-size: 2rem;display: block;text-align:right !important;margin-top: 3em;color: #727272}
+.header{margin-top:90px;width: 100%;overflow: hidden}
+.drAngelo {width:auto;height: 90vh;display: block;margin: 0 auto}
+.dAngelo{ 
+  width: 100%;
+  background-image: url('../../../../assets/images/profDenerAngelo700.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom}
+.skew-c{width:100%;height:100px;position:absolute;left:0px;background: linear-gradient(to left bottom, #fff 49%, #3880ff 50%)}
+.skew-cc{width:100%;height:100px;position:absolute;left:0px;background: linear-gradient(to right bottom, #3880ff 49%, #fff 50%),    linear-gradient(-50deg, #ffffff 16px, #000 0)} 
+ion-col, ion-row, ion-grid {padding: 0;margin: 0;border: none}  
+.youtube,.features,.about,.planos,.contato{min-height: 500px}
+.about,.contato{margin-top: 98px;padding: 0}
+.footer{height: 300px;background: #2f4e87}
+.pt-5{padding-top: 5em}
+.h--features,.h--contato,.h--planos,.h--about,.h--youtube{position: relative;margin: auto;width: 250px;text-transform: uppercase;color:#f2f2f2}
+.h--planos,.h--youtube{color:#c1c1c1}  
+.h::before,.h--planos::before,.h--about::before,.h--youtube::before,.h--contato::before {content: "";position: absolute;bottom: 0;top:40px;left: 25%;width: 50%;height: 2px;background-color: #f2f2f2}
+.h--features::before {content: "";position: absolute;bottom: 0;top:40px;left: 20%;width: 50%;height: 2px;background-color: #f2f2f2}
+.h--youtube::before,.h--planos::before {background: #c1c1c1}  
+.h--planos{width: 100px}
+.h--youtube{width: 300px}
+.h--contato{width: 120px}
+.h--about{width: 90px}  
+.primary--color{background: #3880ff}  
+.scroll--top{--background: #403e3d;--background-activated: #403e3d;--background-hover: #403e3d;--border-radius: 5px;--box-shadow: 0px 1px 2px 0px rgba(0,0,0,.3), 0px 1px 3px 1px rgba(0,0,0,.15);--color: #f2f2f2;opacity: .5;margin-right: 1em;transition: background-color 0.5s ease-in}
+.scroll--top:hover{opacity: 1;transition: background-color 0.5s ease-in}  
+  /* X-Large devices (large desktops, less than 1400px)*/
+@media (max-width: 1399.98px) {
+  .header{position: relative;height: 60vh;width: 100%;background-position: 0 -120px}
+}  
+  /*Large devices (desktops, less than 1200px)*/
+@media (max-width: 1199.98px) {
+  .skew-cc, .skew-c{height: 80px}
+  .header{position: relative;height: 50vh;width: 100%;background-position: 0 0}
+  }
+  /*Medium devices (tablets, less than 992px)*/
+@media (max-width: 991.98px) {
+  .skew-cc, .skew-c{height: 50px}
+}
+/*Small devices (landscape phones, less than 768px)*/
+@media (max-width: 767.98px) {
+  .skew-cc, .skew-c{height: 50px}
+$margin-col: 48px
+}  
+/*X-Small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+  .skew-cc, .skew-c{height: 25px}
+  .header{position: relative;height: 50vh;width: 100%;background-position: 0 0}
+  .about,
+  .contato{margin-top: 19px;padding: 0}
+}
+form {display: flex;flex-direction: column;width: 80%;margin: 0 auto;padding: 20px}  
+label {font-size: 1.2rem;margin-bottom: 10px;color:#f2f2f2}  
+input[type="text"],
+input[type="email"],
+textarea {width: 100%;padding: 10px;margin-bottom: 20px;border: none;border-radius: 5px;box-shadow: 0 0 5px rgba(105, 203, 255, 0.5);background-color: white}
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus{outline: none;border-color: #2f4e87;box-shadow: 0 0 5px #2f4e87}
+textarea {height: 150px}  

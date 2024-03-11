@@ -1,0 +1,270 @@
+<ion-content
+[scrollEvents]="true"
+(ionScroll)="onScroll($any($event))"
+id="home">
+
+<nav
+[ngClass]="{'ion-header-no-scroll': !isScrolled,
+            'ion-header-scroll': isScrolled}">
+  <ion-row style="margin-left: 1em">
+    <ion-col size="12" sizeLg="6" class="col-no-scroll" [ngClass]="{'col-scroll': isScrolled}">
+      <ion-buttons class="hide-min-xxl">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <div class="logo" >
+        <img src="../../../../assets/icon/favicon.png" width="40"  alt="Logo">      
+      </div>
+
+      <span [ngClass]="{'color-no-scroll': !isScrolled,'color-scrolled': isScrolled}"
+         style="cursor: pointer;float: left;margin-left:15px"
+        (click)="onScrollTo('home')">Calculo do Servidor</span>
+    </ion-col>
+
+    <ion-col size="6" class="hide-xs col-no-scroll col-menu hide-max-xxl" 
+        [ngClass]="{'col-scroll': isScrolled}">
+
+      <div class="menu">
+        <a [ngClass]="{'color-no-scroll': !isScrolled,'color-scrolled': isScrolled}"
+           href="javascript:void(0)" (click)="onScrollTo('planos')" >Planos</a>
+           | <a [ngClass]="{'color-no-scroll': !isScrolled,'color-scrolled': isScrolled}"
+          href="javascript:void(0)" (click)="onScrollTo('funcionalidades')" >Funcionalidades</a>
+          | <a [ngClass]="{'color-no-scroll': !isScrolled,'color-scrolled': isScrolled}" 
+        href="javascript:void(0)" (click)="onScrollTo('siga-nos')">Siga-nos</a>
+        | <a [ngClass]="{'color-no-scroll': !isScrolled,'color-scrolled': isScrolled}" 
+          href="javascript:void(0)" (click)="onScrollTo('contato')">Contato</a>
+          | <a [ngClass]="{'color-no-scroll': !isScrolled,'color-scrolled': isScrolled}" 
+          href="javascript:void(0)" (click)="onPopupRequest('login')">
+             <ion-icon name="person" aria-hidden="true"></ion-icon> Entre</a>
+      </div>
+    </ion-col>
+  </ion-row>
+</nav> 
+
+<section class="header">
+  <ion-grid class="header-grid">
+    <ion-row class="header-row">
+      <ion-col size="12" size-lg="6" class="header-col borda">
+        <div class="text-container" >
+          <p>
+            Bem-vindo ao nosso app de simulação de regras de aposentadoria para servidores. Ferramenta poderosa para entender e planejar a aposentadoria. Calculadora intuitiva considera diversos fatores como tempo de contribuição, idade e regime previdenciário. Visualização da data estimada de aposentadoria e valor do benefício esperado. Possibilidade de simular diferentes cenários. Compromisso em manter os dados atualizados conforme as mudanças legislativas. Aposentadoria planejada com confiança e segurança. Esse sistema é o resultado de anos de dedicação para transformar sua experiência com o RPPS.
+          </p>        
+          <i >Prof. Dener Angelo</i>
+        </div>               
+      </ion-col>
+      <ion-col size="12" sizeLg="6" class="header-col  dAngelo ">
+        <!-- <ion-img src="../../../../assets/images/profDenerAngelo.png" class="drAngelo"></ion-img> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</section>
+
+<section id="funcionalidades">
+  <ion-grid>
+    <ion-row >
+      <ion-col size="12" class="features primary--color pt-5" >
+        <h2 class="text-center h--features">Funcionalidades</h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</section>
+    <ion-grid>
+      <!-- class="ion-hide" -->
+      <ion-row id="siga-nos">
+        <ion-col size="12" class="youtube">
+          <div class="skew-cc"></div>
+          <section class="pt-5 ion-text-center">
+            <h2 class="text-center h--youtube">Siga-nos no you tube</h2>
+            <iframe width="{{ youtubeWidth }}" height="{{ youtubeHeight }}" style="margin-top: 1.5em;"
+                src="https://www.youtube.com/embed/94wQxtv_sAc"
+                  frameborder="0" allowfullscreen>
+            </iframe>
+          </section>
+
+        </ion-col>
+      </ion-row>
+
+      <ion-row id="planos">
+        <ion-col size="12" class="planos primary--color">
+          <div class="skew-c"></div>
+          <section class="pt-5">
+            <h2 class="text-center h--planos">Planos</h2>
+            <ion-grid style="margin: 1em 0;">
+              <ion-row>
+                <ion-col size="12" size-md="6"  size-lg="3" style="padding: 0 1em;">
+                  <ion-card>
+                    <ion-card-content class="ion-text-center">
+                      <ion-list lines="none" class="ion-no-padding list--planos">
+                        <ion-item  class="pricing-title no--bg ">
+                          <ion-label>Assistente</ion-label>
+                        </ion-item>
+                        <ion-item  class="price no--bg ">
+                          <ion-label>R$ 0,00<sup>/ mes</sup></ion-label>
+                        </ion-item>
+                      </ion-list>
+                      <ion-list  class=" list--planos--item">
+                        <ion-item>
+                          <ion-label>The Legend of Zelda</ion-label>
+                        </ion-item>
+                        <ion-item class="oddx">
+                          <ion-label >Pac-Man</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label >Super Mario World</ion-label>
+                        </ion-item>
+                        <ion-item class="oddx">
+                          <ion-label >Pac-Man</ion-label>
+                        </ion-item>
+                      </ion-list>
+                      <ion-button
+                        size="large"
+                        color="success">Contratar</ion-button>
+
+                    </ion-card-content>
+                    <br />
+                  </ion-card>
+                </ion-col>
+
+                <ion-col size="12" size-md="6"  size-lg="3" style="padding: 0 1em;">
+                  <ion-card>
+                    <ion-card-content class="ion-text-center">
+                      <ion-list lines="none" class="ion-no-padding list--planos">
+                        <ion-item  class="pricing-title no--bg ">
+                          <ion-label>Júnior</ion-label>
+                        </ion-item>
+                        <ion-item  class="price no--bg ">
+                          <ion-label>R$ 59,99<sup>/ mes</sup></ion-label>
+                        </ion-item>
+                      </ion-list>
+                      <ion-list  class=" list--planos--item">
+                        <ion-item>
+                          <ion-label>The Legend of Zelda</ion-label>
+                        </ion-item>
+                        <ion-item class="oddx">
+                          <ion-label >Pac-Man</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label >Super Mario World</ion-label>
+                        </ion-item>
+                        <ion-item class="oddx">
+                          <ion-label >Pac-Man</ion-label>
+                        </ion-item>
+                      </ion-list>
+                      <ion-button
+                      size="large"
+                      color="success"
+                        >Contratar</ion-button>
+                    </ion-card-content>
+                    <br />
+                  </ion-card>
+                </ion-col>
+
+                <ion-col size="12" size-md="6"  size-lg="3" style="padding: 0 1em;">
+                  <ion-card>
+                    <ion-card-content class="ion-text-center">
+                      <ion-list lines="none" class="ion-no-padding list--planos">
+                        <ion-item  class="pricing-title no--bg ">
+                          <ion-label>Pleno</ion-label>
+                        </ion-item>
+                        <ion-item  class="price no--bg ">
+                          <ion-label>R$ 99,99<sup>/ mes</sup></ion-label>
+                        </ion-item>
+                      </ion-list>
+                      <ion-list  class=" list--planos--item">
+                        <ion-item>
+                          <ion-label>The Legend of Zelda</ion-label>
+                        </ion-item>
+                        <ion-item class="oddx">
+                          <ion-label >Pac-Man</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label >Super Mario World</ion-label>
+                        </ion-item>
+                        <ion-item class="oddx">
+                          <ion-label >Pac-Man</ion-label>
+                        </ion-item>
+                      </ion-list>
+                      <ion-button
+                      size="large"
+                      color="success"
+                        >Contratar</ion-button>
+                    </ion-card-content>
+                    <br />
+                  </ion-card>
+                </ion-col>
+
+                <ion-col size="12" size-md="6"  size-lg="3" style="padding: 0 1em;">
+                  <ion-card>
+                    <ion-card-content class="ion-text-center">
+                      <ion-list lines="none" class="ion-no-padding list--planos">
+                        <ion-item  class="pricing-title no--bg ">
+                          <ion-label>Senior</ion-label>
+                        </ion-item>
+                        <ion-item  class="price no--bg ">
+                          <ion-label>R$ 149,99<sup>/ mes</sup></ion-label>
+                        </ion-item>
+                      </ion-list>
+                      <ion-list  class=" list--planos--item">
+                        <ion-item>
+                          <ion-label>The Legend of Zelda</ion-label>
+                        </ion-item>
+                        <ion-item class="oddx">
+                          <ion-label >Pac-Man</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label >Super Mario World</ion-label>
+                        </ion-item>
+                        <ion-item class="oddx">
+                          <ion-label >Pac-Man</ion-label>
+                        </ion-item>
+                      </ion-list>
+                      <ion-button
+                        size="large"
+                        color="success"
+                        >Contratar</ion-button>
+                    </ion-card-content>
+                    <br />
+                  </ion-card>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </section>
+        </ion-col>
+      </ion-row>
+      <div class="skew-cc"></div>
+      <ion-row id="contato">
+        <ion-col size="12" class="contato ">
+          
+          <section class="pt-5">
+            <h2 class="text-center h--contato">Contato</h2>
+
+            <form>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name">
+
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email">
+
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" placeholder="Enter your message"></textarea>
+              <ion-button expand="block" color="success">Enviar</ion-button>
+
+            </form>
+
+          </section>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12" class="footer">
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end" [ngClass]="{'ion-hide': !isScrolled}">
+      <ion-fab-button class="scroll--top" size="small" (click)="onScrollToTop($event)" >
+        <ion-icon name="chevron-up"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content>
+

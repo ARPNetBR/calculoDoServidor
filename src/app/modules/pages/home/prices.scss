@@ -1,0 +1,51 @@
+ion-card,
+ion-card-content{
+  padding: 0;
+}
+.pricing-title {
+  color: #FFF;
+  background: #3b5998 ;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  margin-bottom: 0;
+}
+.price {
+  background: #69cbff;
+  font-size: 2.5em;
+  font-weight: 700;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  text-align: center;
+  margin-top: 0;
+  color: #FFF;
+}
+.price sup {
+  font-size: 0.4em;
+  position: relative;
+  left: 5px;
+}
+.list--planos > * >ion-label{
+  padding: 10px 0;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+}
+
+ion-item{
+  --background: none;
+  --background: transparent !important;
+}
+
+ion-item.odd {
+  --background: #cfcfcf;
+}
+.list--planos--item > ion-item{
+  padding: 0 1em 0 0;
+}
+ion-card {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+ion-card:hover {
+  box-shadow: 0 0 10px rgba(49, 113, 224, 0.9);
+  transform: scale(1.1);
+}

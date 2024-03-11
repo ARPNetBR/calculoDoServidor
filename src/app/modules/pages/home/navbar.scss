@@ -1,0 +1,69 @@
+
+ion-header{--background: #e7e6eb !important}
+nav {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;    
+    height: 80px;
+    background-color: #e7e6eb !important;
+    z-index: 100;
+  }
+  .col-no-scroll{
+    height: 80px;
+    display: flex; 
+    align-items: center; 
+  }
+  .col-scroll{
+    height: 60px !important;
+    border-bottom: 1px solid #696969;
+  }
+  .col-menu{
+    justify-content: flex-end
+  }
+  .nav-container{
+    width: 100%;
+    height: auto;
+    margin: 10px auto auto auto;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente os itens */
+  }
+  
+  .logo img {
+    line-height: 60px  ;  
+  }
+  
+  .color-no-scroll{
+    color:#555; 
+  }
+  .color-scrolled{
+    color:#f2f2f2; 
+  }
+  .menu {
+    display: flex;
+    align-items: center
+  }
+  
+  .menu a {
+    display: inline-block;
+    text-align: center;
+    padding: 0 20px;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  .ion-header-scroll{
+    height: 60px !important;
+    line-height: 40px !important;
+    background: #3171e0 !important;
+    transition: background-color 0.7s ease-in;
+  }
+  .ion-header-no-scroll{
+    transition: background-color 0.7s ease-out;
+  }

@@ -1,0 +1,38 @@
+
+<ion-content>
+  <ion-button  (click)="modalDismiss()" fill="clear" class="close-btn">
+    <ion-icon name="close-outline"></ion-icon>
+  </ion-button>
+  <ion-grid class="full-height-grid">
+    <ion-row class="full-height-row">
+      <ion-col size="6" style="padding: 1em;" class="background-img hide-xs">
+      </ion-col>
+
+      <ion-col size="12" sizeLg="6" style="padding: 1em" class="center--form">        
+        <form [formGroup]="formData" (ngSubmit)="formSubmit(formData.value)">
+          <h2 class="ion-text-center login-title">Recuperar senha</h2>
+          <p>Informe seu e-mail abaixo e enviaremos instruções sobre como redefinir sua senha.</p>
+          <ion-item lines="full">
+            <ion-label position="floating">Email:</ion-label>
+            <ion-input type="text" formControlName="email" required></ion-input>
+          </ion-item>
+          <ng-container *ngFor="let error of errorMessage.email">
+            <div style="color: red; text-align: center;margin-top: .5em;" *ngIf="formData.get('email').hasError(error.type) && (formData.get('email').dirty || formData.get('email').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+          <ion-row style="margin-top: 1em;">
+            <ion-col>
+              <ion-button type="submit" color="success" expand="block" [disabled]="!formData.valid">Enviar E-mail de Redefinição</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <p class="ion-text-center">Já possui uma conta? <a style="cursor: pointer;" (click)="goToLogin()">Entrar.</a></p>
+            </ion-col>
+          </ion-row>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

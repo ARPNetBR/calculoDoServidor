@@ -1,0 +1,61 @@
+.nav {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid #696969;
+  /* height: 80px;
+  background-color: transparent;*/
+  z-index: 100;
+}
+
+.logo {
+  position: relative;
+  float: left;
+  margin-top:10px;
+  margin-left: 20px;
+  line-height: 80px; /* Ajuste conforme necessário para centralizar verticalmente o logo e o texto */
+}
+
+.logo img {
+  line-height: 60px  ;  
+}
+
+.logo span {
+  font-size: 18px; /* Ajuste conforme necessário */
+  margin-left: 10px; /* Espaçamento entre o logo e o texto */
+  position: absolute;
+  margin-top:-18px;
+  width: 200px;  
+}
+.color-no-scroll{
+  color:#555; 
+}
+.color-scrolled{
+  color:#f2f2f2; 
+}
+.menu {
+  float: right;
+  line-height: 80px; /* Ajuste conforme necessário para centralizar verticalmente os itens do menu */
+}
+
+.menu a {
+  display: inline-block;
+  text-align: center;
+  padding: 0 20px; /* Ajuste conforme necessário */
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.ion-header-scroll{
+  height: 160px !important;
+  line-height: 40px !important;
+  background: #3171e0 !important;
+  transition: background-color 0.7s ease-in;
+}
+.ion-header-no-scroll{
+  /*height: 80px;*/
+  line-height: 60px ;
+  background-color: transparent ;
+  transition: background-color 0.7s ease-out;
+}

@@ -1,0 +1,92 @@
+
+<ion-content>
+  <ion-button  (click)="modalDismiss()" fill="clear" class="close-btn">
+    <ion-icon name="close-outline"></ion-icon>
+  </ion-button>
+  <ion-grid class="full-height-grid">
+    <ion-row class="full-height-row">
+      <ion-col size="6" style="padding: 1em;" class="background-img hide-xs">
+      </ion-col>
+
+      <ion-col size="12" sizeLg="6" style="padding: 1em" class="center--form" 
+        *ngIf="!registerSuccess && !registerFailed">        
+        <form [formGroup]="formData" (ngSubmit)="formSubmit(formData.value)">
+          <h2 class="ion-text-center login-title">Criar Conta</h2>
+          <ion-item lines="full">
+            <ion-label position="floating">Email:</ion-label>
+            <ion-input type="text" formControlName="email" required></ion-input>
+          </ion-item>
+      
+          <ng-container *ngFor="let error of errorMessage.email">
+            <div style="color: red; text-align: center;margin-top: .5em;"
+            *ngIf="formData.get('email').hasError(error.type) && (formData.get('email').dirty || formData.get('email').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+      
+          <ion-item lines="full">
+            <ion-label position="floating">Senha:</ion-label>
+            <ion-input type="password" formControlName="password"  required></ion-input>
+          </ion-item>
+      
+          <ng-container *ngFor="let error of errorMessage.password">
+            <div style="color: red; text-align: center;margin-top: .5em;"
+            *ngIf="formData.get('password').hasError(error.type) && (formData.get('password').dirty || formData.get('password').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+
+          <ion-item lines="full">
+            <ion-label position="floating">Repetir Senha:</ion-label>
+            <ion-input type="password" formControlName="repeatPassword"  required></ion-input>
+          </ion-item>
+    
+          <ng-container *ngFor="let error of errorMessage.repeatPassword">
+            <div style="color: red; text-align: center;margin-top: .5em;"
+              *ngIf="( formData.get('repeatPassword').hasError(error.type) || formData.hasError(error.type) ) &&
+                     ( formData.get('repeatPassword').dirty || formData.get('repeatPassword').touched )  ">
+              {{ error.message }}
+            </div>
+          </ng-container>
+       
+      
+        <ion-row>
+          <ion-col ion-text-center>
+            <ion-label ion-text-center color="danger">{{errorMsg}}</ion-label>
+          </ion-col>
+        </ion-row>
+          <ion-row style="margin-top: 1em;">
+            <ion-col>
+              <ion-button type="submit" color="success" expand="block" [disabled]="!formData.valid">Entrar</ion-button>
+      
+              <!-- <a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a> -->
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>              
+              <p class="ion-text-center">Já possui uma conta? <a style="cursor: pointer;" (click)="goToLogin()">Entrar.</a></p>
+            </ion-col>
+          </ion-row>
+        </form>
+      </ion-col>
+
+      <ion-col size="12" sizeLg="6" 
+        class="ion-text-center" 
+        style="padding: 1em;display: flex; flex-direction: column; justify-content: center; align-items: center;" 
+        *ngIf="registerSuccess">     
+          <ion-icon name="checkmark" style="font-size: 4em;" color="success"></ion-icon><br>
+          <h2>Registro bem-sucedido!</h2>
+          <p>Um e-mail de verificação foi enviado para {{ email }}. 
+            Por favor, verifique seu e-mail para concluir a ativação de sua conta.</p>    
+      </ion-col>
+      <ion-col size="12" sizeLg="6" 
+        class="ion-text-center" 
+        style="padding: 1em;display: flex; flex-direction: column; justify-content: center; align-items: center;" 
+        *ngIf="registerFailed">  
+        <ion-icon name="close" style="font-size: 4em;" color="danger"></ion-icon><br>    
+        <h2>Ocorreu um erro durante o registro!</h2>
+        <p>{{ mensagemErro }}</p>      
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
